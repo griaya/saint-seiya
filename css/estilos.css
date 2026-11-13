@@ -1,0 +1,1686 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   --- PANTALLA DE INTRO / ANIMACIÓN LOGO ---
+   ========================================== */
+
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #05070d; 
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Aumentamos el tiempo total: la intro dura ahora 5.5s en total */
+    animation: ocultarIntro 1s ease-in-out 5.0s forwards;
+}
+
+/* Base de los haces de luz */
+.luz {
+    position: absolute;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(212, 175, 55, 0.9), rgba(255, 223, 115, 0));
+    filter: blur(8px);
+    box-shadow: 0 0 25px #d4af37, 0 0 40px #ffffff;
+    opacity: 0;
+}
+
+/* 1. Luz desde la izquierda (Más lenta: 1.5s) */
+.luz-izquierda {
+    width: 60vw;
+    height: 6px;
+    top: 50%;
+    left: -60vw;
+    animation: entrarIzquierda 1.5s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
+}
+
+/* 2. Luz desde la derecha (Más lenta: 1.5s) */
+.luz-derecha {
+    width: 60vw;
+    height: 6px;
+    top: 50%;
+    right: -60vw;
+    transform: rotate(180deg);
+    animation: entrarDerecha 1.5s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
+}
+
+/* 3. Luz desde abajo (Más lenta: 1.5s) */
+.luz-abajo {
+    width: 6px;
+    height: 60vh;
+    left: 50%;
+    bottom: -60vh;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(212, 175, 55, 0.9), rgba(255, 223, 115, 0));
+    animation: entrarAbajo 1.5s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
+}
+
+/* 4. Luz desde arriba (Más lenta: 1.5s) */
+.luz-arriba {
+    width: 6px;
+    height: 60vh;
+    left: 50%;
+    top: -60vh;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(212, 175, 55, 0.9), rgba(255, 223, 115, 0));
+    animation: entrarArriba 1.5s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
+}
+
+/* Imagen del Logo Deslizante (Más grande e imponente) */
+.logo-animado {
+    max-width: 480px; /* Incrementado para que se vea más grande */
+    width: 85%;       /* Ocupa mayor porcentaje en pantallas chicas */
+    height: auto;
+    position: absolute;
+    top: -350px; 
+    opacity: 0;
+    /* Descenso más pausado y elegante (1.5s) que arranca cuando las luces convergen (a los 1.6s) */
+    animation: deslizarLogo 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.6s forwards;
+}
+
+/* --- KEYFRAMES / SECUENCIAS DE ANIMACIÓN --- */
+
+@keyframes entrarIzquierda {
+    0% { left: -60vw; opacity: 0; }
+    50% { opacity: 1; }
+    100% { left: 50%; opacity: 1; width: 0; }
+}
+
+@keyframes entrarDerecha {
+    0% { right: -60vw; opacity: 0; }
+    50% { opacity: 1; }
+    100% { right: 50%; opacity: 1; width: 0; }
+}
+
+@keyframes entrarAbajo {
+    0% { bottom: -60vh; opacity: 0; }
+    50% { opacity: 1; }
+    100% { bottom: 50%; opacity: 1; height: 0; }
+}
+
+@keyframes entrarArriba {
+    0% { top: -60vh; opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 50%; opacity: 1; height: 0; }
+}
+
+@keyframes deslizarLogo {
+    0% {
+        top: -350px;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    70% {
+        top: 50%;
+        transform: translateY(-50%) scale(1.03); 
+        opacity: 1;
+        filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.9));
+    }
+    100% {
+        top: 50%;
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+        filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.7));
+    }
+}
+
+@keyframes ocultarIntro {
+    0% { opacity: 1; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* Fondo general del cuerpo (azul oscuro profundo) */
+body {
+    background-color: #191947; /* Azul oscuro profundo */
+    color: #d4af37; /* Color dorado para el texto */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    /* Columna de altura mínima para que el footer quede siempre al pie */
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- HEADER Y NAVEGACIÓN --- */
+header {
+    background-color: #05070d; 
+    padding: 15px 30px;
+    border-bottom: 2px solid #d4af37; 
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra la barra completa si hay espacio de sobra */
+}
+
+/* Estilo del logo: se alinea a la izquierda y se le da un margen para que no se pegue al borde */
+.logo-nav {
+    margin-right: auto; /* Esto empuja todo lo demás (los links) hacia la derecha */
+    margin-left: 20px;  /* Separa el logo del borde izquierdo de la pantalla */
+}
+
+.logo-nav img {
+    height: 80px; 
+    width: auto;
+    display: block;
+}
+
+/* Enlaces del nav con color dorado y la línea de vínculo abajo */
+nav a:not(.logo-nav) {
+    color: #d4af37; 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding-bottom: 5px; /* Espacio para que la línea no quede pegada al texto */
+    border-bottom: 2px solid #d4af37; /* Línea estática debajo de cada enlace */
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por los enlaces */
+nav a:not(.logo-nav):hover {
+    color: #ffdf73; 
+    border-bottom-color: #ffdf73; /* La línea también brilla o aclara al pasar el mouse */
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+/* --- CONTENIDO PRINCIPAL (MAIN) --- */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+/* Header y footer ocupan todo el ancho y no se encogen */
+header,
+.footer-sitio {
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+/* Sección Athena */
+.seccion-athena {
+    background-color: #121826; /* Fondo oscuro integrado al body */
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    /* Sombra dorada muy sutil */
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.athena-container img {
+    max-width: 78%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #d4af37;
+}
+
+.seccion-athena p {
+    text-align: justify;
+    margin-bottom: 15px;
+    color: #d4af37; /* Aseguramos que el texto sea perfectamente legible */
+}
+
+/* --- CONTENEDOR DE PERSONAJES DESTACADOS  --- */
+.Seiya, .Ikki, .Shaka {
+    background-color: #0b0f19;
+    /* Sombra dorada muy sutil para cada tarjeta */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    flex: 1; /* Para que se distribuyan de forma equitativa en la fila */
+    max-width: 32%; /* Asegura que entren los tres juntos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Selector contenedor para alinear los 3 personajes uno al lado del otro */
+.contenedor-personajes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.Seiya img, .Ikki img, .Shaka img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+/* Círculos dorados para los nombres de los 3 personajes */
+.Seiya h3:first-of-type, 
+.Ikki h3:first-of-type, 
+.Shaka h3:first-of-type {
+    width: 85px;
+    height: 85px;
+    background-color: #05070d; /* Fondo oscuro por dentro del círculo */
+    border: 2px solid #d4af37;  /* Círculo de color dorado */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -53px auto 15px auto; /* Efecto flotante sobre la imagen */
+    font-size: 0.8rem;
+    color: #d4af37;             /* Letras doradas */
+    text-align: center;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+/* Botones de Identidad */
+.btn-identidad {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-identidad:hover {
+    background-color: #d4af37;
+    border-color: #d4af37;
+    color: #0b0f19;
+}
+
+/* Botones de Categorias */
+.btn-categoria {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 240px;
+    min-height: 56px;
+    padding: 14px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    color: #111111;
+    text-decoration: none;
+    cursor: pointer;
+    background: linear-gradient(180deg,
+            var(--metal-light) 0%,
+            var(--metal) 45%,
+            var(--metal-dark) 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.75),
+        inset 0 -3px 0 rgba(0, 0, 0, 0.25),
+        0 5px 0 var(--metal-edge),
+        0 8px 14px rgba(0, 0, 0, 0.35);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.2s ease;
+}
+
+.btn-categoria:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.85),
+        inset 0 -3px 0 rgba(0, 0, 0, 0.25),
+        0 6px 0 var(--metal-edge),
+        0 10px 18px rgba(0, 0, 0, 0.4);
+}
+
+.btn-categoria:active {
+    transform: translateY(4px);
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.35),
+        0 1px 0 var(--metal-edge),
+        0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn-categoria:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.btn-categoria .text-arrow {
+    transition: transform 0.3s ease;
+}
+
+.btn-categoria:hover .text-arrow {
+    transform: translateX(4px);
+}
+
+.btn-bronce {
+    --metal-light: #f3c08a;
+    --metal: #cd7f32;
+    --metal-dark: #8a4a18;
+    --metal-edge: #5a2e0c;
+}
+
+.btn-oro {
+    --metal-light: #fff3a6;
+    --metal: #ffd700;
+    --metal-dark: #b8860b;
+    --metal-edge: #7a5c00;
+}
+
+.btn-plata {
+    --metal-light: #ffffff;
+    --metal: #d0d0d0;
+    --metal-dark: #8e8e8e;
+    --metal-edge: #5f5f5f;
+}
+
+/* ==========================================
+   --- VENTANA EMERGENTE (MODAL) ---
+   ========================================== */
+
+/* Fondo translúcido que cubre toda la pantalla */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(5, 7, 13, 0.85); /* Vidrio ahumado / translúcido oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Clase que activaremos con JS para mostrar el modal */
+.modal-overlay.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tarjeta interna del modal */
+.modal-tarjeta {
+    background-color: #0b0f19;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    border-radius: 12px;
+    padding: 35px 30px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    color: #ffffff;
+    text-align: left;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-overlay.activo .modal-tarjeta {
+    transform: translateY(0);
+}
+
+/* Título dentro del modal */
+.modal-tarjeta h2 {
+    color: #ffdf73;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Textos de los campos */
+.modal-cuerpo p {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    color: #d4af37;
+}
+
+.modal-cuerpo p strong {
+    color: #ffffff;
+}
+
+/* Botón de cerrar (la 'X') */
+.btn-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #d4af37;
+    font-size: 1.8rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.btn-cerrar:hover {
+    color: #ffdf73;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.8);
+}
+
+
+/* --- GRILLA DE TARJETAS (3 por línea) --- */
+.grilla-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fuerza exactamente 3 columnas en escritorio */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* --- CRÉDITOS / EQUIPO DE DESARROLLO --- */
+
+.equipo-main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 56px 20px 72px;
+    text-align: center;
+}
+
+.equipo-titulo {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+    color: #ffdf73;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+.equipo-titulo::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin: 18px auto 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+}
+
+/* Frase colaborativa: una sola línea, grande y en cursiva */
+.equipo-intro {
+    max-width: none;
+    margin: 2.6em auto 0;
+    font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+    font-style: italic;
+    line-height: 1.4;
+    color: #dbe2ee;
+    white-space: nowrap;
+}
+
+/* Lista centrada de integrantes */
+.equipo-lista {
+    max-width: 860px;
+    margin: 3.2em auto 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid rgba(212, 175, 55, 0.28);
+}
+
+.fila-equipo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 4px 14px;
+    padding: 18px 6px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.16);
+    text-align: center;
+    transition: background 0.2s ease;
+}
+
+.fila-equipo:hover {
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.fila-nombre {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #f2f4f8;
+}
+
+.fila-rol {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #d4af37;
+}
+
+/* Separador fino entre el nombre y el rol */
+.fila-rol::before {
+    content: "—";
+    margin-right: 12px;
+    color: rgba(212, 175, 55, 0.5);
+}
+
+/* Responsive de Créditos */
+@media (max-width: 900px) {
+    .equipo-intro {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .equipo-main {
+        padding: 36px 16px 72px;
+    }
+
+    .equipo-intro {
+        white-space: normal;
+        font-size: 1.15rem;
+    }
+
+    .fila-equipo {
+        gap: 2px 10px;
+        padding: 16px 4px;
+    }
+
+    .fila-nombre {
+        font-size: 1.1rem;
+    }
+
+    .fila-rol {
+        font-size: 0.95rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fila-equipo {
+        transition: none;
+    }
+}
+
+
+
+
+/* ==========================================
+   --- PÁGINA DE CATEGORÍAS ---
+   ========================================== */
+
+.categorias-main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+/* --- Título de la página --- */
+
+.categorias-titulo {
+    margin: 0 0 34px;
+    text-align: center;
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #ffdf73;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+/* --- Pestañas + panel --- */
+
+.categorias-tabs {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.selector-categorias {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0 0 0 12px;
+    border: 0;
+}
+
+.tab-categoria {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 26px;
+    margin-bottom: -1px;
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    border-radius: 10px 10px 0 0;
+    background: #0b0f19;
+    color: rgba(212, 175, 55, 0.72);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.tab-categoria:hover {
+    color: #ffdf73;
+    background: #131a2e;
+    border-color: rgba(212, 175, 55, 0.45);
+}
+
+.tab-categoria:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+.tab-categoria[aria-selected="true"] {
+    background: #10142b;
+    color: #ffdf73;
+    border-color: rgba(212, 175, 55, 0.55);
+    border-bottom-color: #10142b;
+    box-shadow: inset 0 2px 0 #ffd700;
+}
+
+/* La "x" solo se ve en la pestaña activa; el espacio queda reservado
+   para que el ancho de la pestaña no salte. Va como badge circular. */
+.tab-cerrar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.4em;
+    height: 1.4em;
+    margin-left: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.12);
+    color: #ffdf73;
+    font-size: 1em;
+    line-height: 1;
+    visibility: hidden;
+    transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.tab-categoria[aria-selected="true"] .tab-cerrar {
+    visibility: visible;
+}
+
+/* Al pasar el mouse, se rellena de dorado */
+.tab-categoria[aria-selected="true"]:hover .tab-cerrar {
+    background: #d4af37;
+    color: #12162a;
+    border-color: #d4af37;
+}
+
+.categorias-panel {
+    position: relative;
+    z-index: 1;
+    padding: 38px 40px 42px;
+    background: #10142b;
+    border: 1px solid rgba(212, 175, 55, 0.55);
+    border-radius: 12px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.categorias-aviso {
+    margin: 8px 0 12px;
+    text-align: center;
+    font-size: 1.0625rem;
+    font-style: italic;
+    color: rgba(212, 175, 55, 0.8);
+}
+
+/* --- Bloque de cada categoría --- */
+
+.categoria-bloque {
+    display: block;
+    padding: 0;
+}
+
+/* El atributo hidden no gana contra display:grid/block */
+.categoria-bloque[hidden] {
+    display: none;
+}
+
+.categoria-bloque:not([hidden]) {
+    animation: categoria-aparecer 0.3s ease both;
+}
+
+@keyframes categoria-aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.categoria-titulo {
+    margin: 0 0 28px;
+    text-align: center;
+    position: relative;
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #d4af37; /* Fallback para navegadores sin background-clip */
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.55));
+}
+
+.categoria-titulo::after {
+    content: "";
+    display: block;
+    width: 72px;
+    height: 3px;
+    margin: 16px auto 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, transparent, var(--titulo-medio), transparent);
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .categoria-titulo {
+        background: linear-gradient(160deg,
+                var(--titulo-claro) 0%,
+                var(--titulo-medio) 45%,
+                var(--titulo-oscuro) 70%,
+                var(--titulo-brillo) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+}
+
+.categoria-bloque.bronce {
+    --titulo-claro: #ffe6c7;
+    --titulo-medio: #e6a257;
+    --titulo-oscuro: #c17428;
+    --titulo-brillo: #ffd9a8;
+}
+
+.categoria-bloque.oro {
+    --titulo-claro: #fff6b0;
+    --titulo-medio: #ffd700;
+    --titulo-oscuro: #b8860b;
+    --titulo-brillo: #fffbe0;
+}
+
+.categoria-bloque.plata {
+    --titulo-claro: #ffffff;
+    --titulo-medio: #d0d0d0;
+    --titulo-oscuro: #8e8e8e;
+    --titulo-brillo: #ffffff;
+}
+
+.categoria-texto {
+    max-width: 66ch;
+    margin: 0 auto 3em; /* 3em = dos líneas de interlineado */
+    color: #d4af37;
+    text-align: left;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+.categoria-texto:last-of-type {
+    margin-bottom: 0;
+}
+
+.categoria-accion {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.6em;
+}
+
+/* ==========================================
+   --- CARRUSEL DE PERSONAJES ---
+   ========================================== */
+
+.carrusel-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(5, 7, 13, 0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+}
+
+.carrusel-overlay.activo {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.25s ease, visibility 0s linear 0s;
+}
+
+.carrusel-contenedor {
+    display: flex;
+    flex-direction: column;
+    width: min(720px, 100%);
+    max-height: calc(100vh - 48px);
+    padding: 20px 22px 24px;
+    text-align: center;
+    background: linear-gradient(180deg, #151b2b 0%, #0b0f19 100%);
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+    transform: translateY(12px) scale(0.98);
+    transition: transform 0.25s ease;
+}
+
+.carrusel-overlay.activo .carrusel-contenedor {
+    transform: translateY(0) scale(1);
+}
+
+.carrusel-encabezado {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.carrusel-titulo {
+    font-size: 1.4rem;
+    color: #ffdf73;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.carrusel-contador {
+    color: #d4af37;
+    font-size: 0.9rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.carrusel-escenario {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 12px;
+    min-height: 0;
+}
+
+.carrusel-figura {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.carrusel-imagen {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: min(60vh, 520px);
+    object-fit: contain;
+    background: #05070d;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 10px;
+}
+
+.carrusel-nombre {
+    color: #ffdf73;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.carrusel-flecha {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    border-radius: 50%;
+    background: rgba(5, 7, 13, 0.7);
+    color: #ffdf73;
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carrusel-flecha:hover {
+    background: rgba(212, 175, 55, 0.2);
+    transform: scale(1.06);
+}
+
+.carrusel-flecha:focus-visible,
+.btn-detener:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.carrusel-pie {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.btn-detener {
+    padding: 11px 30px;
+    border: 1px solid #d4af37;
+    border-radius: 24px;
+    background: transparent;
+    color: #ffdf73;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-detener:hover {
+    background: #d4af37;
+    color: #0b0f19;
+}
+
+body.carrusel-abierto {
+    overflow: hidden;
+}
+
+/* ==========================================
+   --- DISEÑO RESPONSIVO (MEDIA QUERIES) ---
+   ========================================== */
+
+/* Para tablets y pantallas medianas (hasta 992px) */
+@media (max-width: 992px) {
+    .contenedor-personajes {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .Seiya, .Ikki, .Shaka {
+        max-width: 45%;
+        margin-bottom: 50px;
+    }
+}
+
+/* Para teléfonos celulares (hasta 768px) */
+@media (max-width: 768px) {
+    /* Ajustar la navegación para que baje en columna o se ajuste */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start; /* Alinea los elementos de la nav hacia la izquierda en móviles */
+    }
+
+    /* Mantenemos el logo en la izquierda sin centrarlo */
+    .logo-nav {
+        margin: 0; 
+        margin-left: 5px; /* Un pequeño margen para que no se pegue al borde izquierdo */
+    }
+
+    /* Apilar los personajes uno debajo del otro */
+    .contenedor-personajes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Seiya, .Ikki, .Shaka {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    header {
+        padding: 10px 15px;
+    }
+
+    .grilla-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer-sitio {
+  background-color: #0b0c16;
+  color: #d4af37;
+  text-align: center;
+  padding: 20px;
+  font-family: sans-serif;
+  font-size: 1.0833rem;
+  border-top: 2px solid #ffd700;
+}
+
+/* Ajustes responsivos de la página de categorías y el carrusel */
+@media (max-width: 768px) {
+    .categorias-main {
+        margin: 24px auto;
+        padding: 0 16px;
+    }
+
+    .categorias-panel {
+        padding: 28px 24px 32px;
+    }
+
+    .categoria-titulo {
+        font-size: clamp(2rem, 12vw, 2.8rem);
+    }
+
+    .categoria-texto {
+        max-width: none;
+    }
+
+    .categoria-accion {
+        margin-top: 2.2em;
+    }
+
+    .btn-categoria {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .carrusel-overlay {
+        padding: 12px;
+    }
+
+    .carrusel-contenedor {
+        max-height: calc(100vh - 24px);
+        padding: 16px;
+    }
+
+    .carrusel-encabezado {
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .carrusel-escenario {
+        gap: 6px;
+    }
+
+    .carrusel-flecha {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .carrusel-imagen {
+        max-height: 52vh;
+    }
+}
+
+/* Para teléfonos pequeños (hasta 480px): pestañas compactas */
+@media (max-width: 480px) {
+    .selector-categorias {
+        padding-left: 0;
+        gap: 4px;
+    }
+
+    .tab-categoria {
+        flex: 1 1 auto;
+        justify-content: center;
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .tab-cerrar {
+        margin-left: 6px;
+    }
+
+    .categorias-panel {
+        padding: 22px 18px 26px;
+    }
+
+    .categoria-texto {
+        font-size: 1.0625rem;
+        margin-bottom: 2.6em;
+    }
+
+    .categoria-texto:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+/* ==========================================
+   --- PÁGINA DE PERSONAJES ---
+   ========================================== */
+
+.personajes-main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.titulo-personajes {
+    color: #ffdf73;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+}
+
+.subtitulo-personajes {
+    color: #d4af37;
+    font-size: 1rem;
+    margin-bottom: 24px;
+}
+
+/* --- Buscador --- */
+
+.buscador-personajes {
+    display: flex;
+    gap: 12px;
+    max-width: 640px;
+    margin: 0 auto 18px;
+}
+
+#input-buscador {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 18px;
+    background-color: #0b1329;
+    border: 1px solid #2a4365;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#input-buscador:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+#input-buscador::placeholder {
+    color: #718096;
+    letter-spacing: 2px;
+}
+
+.btn-buscar {
+    padding: 13px 26px;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #ffdf73;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-buscar:hover {
+    background-color: #d4af37;
+    color: #0b0f19;
+}
+
+.mensaje-busqueda {
+    max-width: 640px;
+    margin: 0 auto 20px;
+    padding: 12px 16px;
+    border: 1px dashed #2a4365;
+    border-radius: 8px;
+    background-color: #0b1329;
+    color: #a0aec0;
+    font-size: 1rem;
+}
+
+.mensaje-busqueda--alerta {
+    border: 1px solid #ff6b6b;
+    background-color: rgba(255, 68, 68, 0.12);
+    color: #ffb3b3;
+    font-weight: bold;
+    box-shadow: 0 0 18px rgba(255, 68, 68, 0.25);
+    animation: sacudirMensaje 0.45s ease-in-out 1;
+}
+
+.mensaje-busqueda--alerta::before {
+    content: "⚠ ";
+    color: #ff8a8a;
+}
+
+@keyframes sacudirMensaje {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-6px);
+    }
+
+    40% {
+        transform: translateX(6px);
+    }
+
+    60% {
+        transform: translateX(-4px);
+    }
+
+    80% {
+        transform: translateX(4px);
+    }
+}
+
+#input-buscador.sin-resultados {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.25);
+}
+
+/* --- Secciones por categoría --- */
+
+.seccion-categoria {
+    padding: 36px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.seccion-categoria:last-child {
+    border-bottom: none;
+}
+
+.titulo-categoria-personajes {
+    margin: 0 0 24px;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #d4af37;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.55));
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .titulo-categoria-personajes {
+        background: linear-gradient(160deg,
+                var(--titulo-claro) 0%,
+                var(--titulo-medio) 45%,
+                var(--titulo-oscuro) 70%,
+                var(--titulo-brillo) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+}
+
+.seccion-categoria.bronce {
+    --titulo-claro: #ffe6c7;
+    --titulo-medio: #e6a257;
+    --titulo-oscuro: #c17428;
+    --titulo-brillo: #ffd9a8;
+}
+
+.seccion-categoria.oro {
+    --titulo-claro: #fff6b0;
+    --titulo-medio: #ffd700;
+    --titulo-oscuro: #b8860b;
+    --titulo-brillo: #fffbe0;
+}
+
+.seccion-categoria.plata {
+    --titulo-claro: #ffffff;
+    --titulo-medio: #d0d0d0;
+    --titulo-oscuro: #8e8e8e;
+    --titulo-brillo: #ffffff;
+}
+
+/* --- Cards uniformes --- */
+
+.card-personaje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+    padding: 16px;
+    background-color: #0b0f19;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-personaje:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35), 0 0 18px rgba(212, 175, 55, 0.25);
+}
+
+.card-personaje-imagen {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #05070d;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 8px;
+}
+
+.card-personaje-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-personaje-nombre {
+    color: #ffdf73;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.card-personaje .btn-identidad {
+    margin-top: auto;
+}
+
+/* Resaltado de coincidencias del buscador */
+
+.card-personaje.resaltado {
+    border-color: #ffdf73;
+    box-shadow: 0 0 0 2px rgba(255, 223, 115, 0.85), 0 0 26px rgba(255, 215, 0, 0.55);
+    animation: pulsoResaltado 1.1s ease-in-out 2;
+}
+
+@keyframes pulsoResaltado {
+    0%,
+    100% {
+        box-shadow: 0 0 0 2px rgba(255, 223, 115, 0.85), 0 0 18px rgba(255, 215, 0, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 4px rgba(255, 223, 115, 1), 0 0 34px rgba(255, 215, 0, 0.75);
+    }
+}
+
+/* --- Modal de ficha (propio de esta página) --- */
+
+.modal-ficha-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(5, 7, 13, 0.88);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.28s ease, visibility 0s linear 0.28s;
+}
+
+.modal-ficha-overlay.activo {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.28s ease, visibility 0s linear 0s;
+}
+
+.modal-ficha-tarjeta {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: 28px;
+    text-align: left;
+    color: #ffffff;
+    background: linear-gradient(180deg, #151b2b 0%, #0b0f19 100%);
+    border: 2px solid #d4af37;
+    border-radius: 14px;
+    box-shadow: 0 0 34px rgba(212, 175, 55, 0.4);
+    transform: translateY(-18px) scale(0.98);
+    transition: transform 0.28s ease;
+}
+
+.modal-ficha-overlay.activo .modal-ficha-tarjeta {
+    transform: translateY(0) scale(1);
+}
+
+.modal-ficha-cerrar {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #d4af37;
+    font-size: 1.9rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-ficha-cerrar:hover {
+    color: #ffdf73;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.8);
+}
+
+.modal-ficha-encabezado {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.modal-ficha-foto {
+    flex: 0 0 120px;
+    width: 120px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #05070d;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 8px;
+}
+
+.modal-ficha-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.modal-ficha-sin-imagen {
+    display: none;
+    padding: 10px;
+    color: #d4af37;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.modal-ficha-foto img.sin-imagen {
+    display: none;
+}
+
+.modal-ficha-foto img.sin-imagen + .modal-ficha-sin-imagen {
+    display: block;
+}
+
+.modal-ficha-nombre {
+    margin: 0 0 8px;
+    color: #ffdf73;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.modal-ficha-categoria {
+    display: inline-block;
+    margin: 0;
+    padding: 3px 12px;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 999px;
+    background-color: rgba(212, 175, 55, 0.15);
+    color: #ffdf73;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.modal-ficha-datos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 22px;
+    margin: 0;
+}
+
+.modal-ficha-datos > div {
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+.modal-ficha-datos dt {
+    color: #d4af37;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.modal-ficha-datos dd {
+    margin: 2px 0 0;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.modal-ficha-descripcion {
+    grid-column: 1 / -1;
+}
+
+.modal-ficha-descripcion dd {
+    color: #d4af37;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+body.modal-abierto {
+    overflow: hidden;
+}
+
+/* --- Responsivo de la página de personajes --- */
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .personajes-main .grilla-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .personajes-main {
+        margin: 24px auto;
+        padding: 0 16px;
+    }
+
+    .buscador-personajes {
+        flex-direction: column;
+    }
+
+    .btn-buscar {
+        width: 100%;
+    }
+
+    .modal-ficha-tarjeta {
+        max-height: calc(100vh - 24px);
+        padding: 22px 18px;
+    }
+
+    .modal-ficha-encabezado {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .modal-ficha-foto {
+        width: 96px;
+        height: 120px;
+        flex-basis: 120px;
+    }
+
+    .modal-ficha-datos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   --- BOTÓN "VOLVER ARRIBA" (Personajes) ---
+   ========================================== */
+
+.volver-arriba {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 900; /* por debajo del modal (10000) */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border: 1px solid rgba(212, 175, 55, 0.55);
+    border-radius: 999px;
+    background: rgba(11, 15, 25, 0.92);
+    color: #ffdf73;
+    font: inherit;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s,
+        background 0.2s ease, color 0.2s ease;
+}
+
+.volver-arriba.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s,
+        background 0.2s ease, color 0.2s ease;
+}
+
+.volver-arriba:hover {
+    background: #d4af37;
+    color: #12162a;
+}
+
+.volver-arriba:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.volver-arriba svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* En pantallas chicas: solo la flecha */
+@media (max-width: 560px) {
+    .volver-arriba {
+        right: 16px;
+        bottom: 16px;
+        padding: 14px;
+        border-radius: 50%;
+    }
+
+    .volver-arriba-texto {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .volver-arriba,
+    .volver-arriba.visible {
+        transition: none;
+    }
+}

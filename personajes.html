@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes | El Mundo de los Caballeros</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="shortcut icon" href="img/logos/logo_nav.webp">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo-nav">
+                <img src="img/logos/logo_nav.webp" alt="Logo Los Caballeros del Zodiaco">
+            </a>
+            <a href="index.html">Inicio</a>
+            <a href="categorias.html">Categorías</a>
+            <a href="personajes.html">Personajes</a>
+            <a href="creditos.html">Créditos</a>
+        </nav>
+    </header>
+
+    <main class="personajes-main">
+        <h1 class="titulo-personajes">Personajes</h1>
+        <p class="subtitulo-personajes">Buscá por nombre, armadura o técnica.</p>
+
+        <form id="buscador-personajes" class="buscador-personajes" role="search">
+            <input id="input-buscador" type="search" placeholder="Nombre, armadura o técnica…"
+                aria-label="Buscar personaje por nombre, armadura o técnica" autocomplete="off">
+            <button type="submit" class="btn-buscar">Buscar</button>
+        </form>
+
+        <p id="mensaje-busqueda" class="mensaje-busqueda" role="status" hidden></p>
+
+        <!-- El JS genera acá las secciones Bronce, Oro y Plata -->
+        <div id="contenedor-personajes"></div>
+    </main>
+
+    <footer class="footer-sitio">
+        <p>Todos los derechos reservados &COPY; 2026</p>
+    </footer>
+
+    <!-- Modal propio de la página de personajes -->
+    <div class="modal-ficha-overlay" id="modal-ficha" role="dialog" aria-modal="true"
+        aria-labelledby="modal-ficha-nombre" aria-hidden="true">
+        <div class="modal-ficha-tarjeta">
+            <button type="button" class="modal-ficha-cerrar" id="modal-ficha-cerrar"
+                aria-label="Cerrar ficha">&times;</button>
+
+            <div class="modal-ficha-encabezado">
+                <div class="modal-ficha-foto">
+                    <img id="modal-ficha-imagen" alt="" decoding="async">
+                    <span class="modal-ficha-sin-imagen">Imagen no disponible</span>
+                </div>
+                <div>
+                    <h2 class="modal-ficha-nombre" id="modal-ficha-nombre"></h2>
+                    <p class="modal-ficha-categoria" id="modal-ficha-categoria"></p>
+                </div>
+            </div>
+
+            <dl class="modal-ficha-datos">
+                <div>
+                    <dt>Altura</dt>
+                    <dd id="modal-ficha-altura">—</dd>
+                </div>
+                <div>
+                    <dt>Peso</dt>
+                    <dd id="modal-ficha-peso">—</dd>
+                </div>
+                <div>
+                    <dt>Edad</dt>
+                    <dd id="modal-ficha-edad">—</dd>
+                </div>
+                <div>
+                    <dt>Procedencia</dt>
+                    <dd id="modal-ficha-procedencia">—</dd>
+                </div>
+                <div>
+                    <dt>Armadura</dt>
+                    <dd id="modal-ficha-armadura">—</dd>
+                </div>
+                <div>
+                    <dt>Técnica</dt>
+                    <dd id="modal-ficha-tecnica">—</dd>
+                </div>
+                <div class="modal-ficha-descripcion">
+                    <dt>Descripción</dt>
+                    <dd id="modal-ficha-descripcion">—</dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+
+    <!-- Botón flotante para volver arriba (aparece al llegar al final) -->
+    <button type="button" class="volver-arriba" id="volver-arriba" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="volver-arriba-texto">Volver arriba</span>
+    </button>
+
+    <script src="data/personajes.js"></script>
+    <script src="js/personajes.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="shortcut icon" href="img/logos/logo_nav.webp">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo-nav">
+                <img src="img/logos/logo_nav.webp" alt="Logo Los Caballeros del Zodiaco">
+            </a>
+            <a href="index.html">Inicio</a>
+            <a href="categorias.html">Categorías</a>
+            <a href="personajes.html">Personajes</a>
+            <a href="creditos.html">Créditos</a>
+        </nav>
+    </header>
+
+    <main class="categorias-main">
+
+        <h1 class="categorias-titulo">Elegí tu Categoría Favorita</h1>
+
+        <div class="categorias-tabs">
+            <div class="selector-categorias" role="tablist" aria-label="Categorías de caballeros">
+                <button type="button" class="tab-categoria" id="tab-bronce" role="tab" aria-selected="false"
+                    aria-controls="panel-bronce" tabindex="0">
+                    Bronce<span class="tab-cerrar" aria-hidden="true">&times;</span>
+                </button>
+                <button type="button" class="tab-categoria" id="tab-oro" role="tab" aria-selected="false"
+                    aria-controls="panel-oro" tabindex="0">
+                    Oro<span class="tab-cerrar" aria-hidden="true">&times;</span>
+                </button>
+                <button type="button" class="tab-categoria" id="tab-plata" role="tab" aria-selected="false"
+                    aria-controls="panel-plata" tabindex="0">
+                    Plata<span class="tab-cerrar" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="categorias-panel">
+                <p class="categorias-aviso" id="categorias-aviso">Elegí una categoría para ver su información.</p>
+
+                <section class="categoria-bloque bronce" id="panel-bronce" role="tabpanel" aria-labelledby="tab-bronce"
+                    hidden>
+                    <h2 class="categoria-titulo">Bronce</h2>
+
+                    <p class="categoria-texto">Los Bronze Saints también llamados Caballeros de Bronce son los
+                        guerreros que forman parte de la categoría más baja del ejército de Athena.</p>
+
+                    <p class="categoria-texto">Sin embargo, siguen siendo poderosos guerreros poseen grandes
+                        habilidades de combate que superan con creces las de un humano normal bien entrenado, pues
+                        gracias a que pueden explotar su cosmos interior han adquirido habilidades sobrehumanas que les
+                        permiten alcanzar una velocidad de mach 1 (340,29 m/s), rasgar el cielo con sus puños y destruir
+                        la tierra con sus patadas que cuentan con habilidades sobrehumanas y son una parte fundamental
+                        del ejército de Athena.</p>
+
+                    <div class="categoria-accion">
+                        <button type="button" class="btn-categoria btn-bronce" data-categoria="bronce"
+                            aria-label="Ver caballeros de Bronce">
+                            <span>Ver Caballeros</span>
+                            <span class="text-arrow" aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="categoria-bloque oro" id="panel-oro" role="tabpanel" aria-labelledby="tab-oro" hidden>
+                    <h2 class="categoria-titulo">Oro</h2>
+
+                    <p class="categoria-texto">Los Gold Saints también llamados Caballeros Dorados o Caballeros de Oro
+                        son los guerreros de élite del ejército de Athena, que ostentan con orgullo un rango superior al
+                        de los Silver y Bronze Saints.</p>
+
+                    <p class="categoria-texto">Son los Saints de más alto rango en el Santuario, los más poderosos y
+                        los que ostentan la mayor jerarquía dentro del ejército de la diosa Athena.</p>
+
+                    <p class="categoria-texto">La función principal de los doce es proteger los Templos a lo largo del
+                        camino que recorre la montaña del Santuario, para evitar que los enemigos e invasores lleguen a
+                        la cima de la montaña donde la diosa Athena habita su Templo.</p>
+
+                    <div class="categoria-accion">
+                        <button type="button" class="btn-categoria btn-oro" data-categoria="oro"
+                            aria-label="Ver caballeros de Oro">
+                            <span>Ver Caballeros</span>
+                            <span class="text-arrow" aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="categoria-bloque plata" id="panel-plata" role="tabpanel" aria-labelledby="tab-plata"
+                    hidden>
+                    <h2 class="categoria-titulo">Plata</h2>
+
+                    <p class="categoria-texto">Los Silver Saints también llamados Caballeros Plateados o Caballeros de
+                        Plata son los guerreros que forman parte de la categoría intermedia del ejército de Athena, que
+                        ostentan con orgullo un rango superior al de los Bronze Saints, pero inferior al de los Gold
+                        Saints.</p>
+
+                    <p class="categoria-texto">Están dotados de excelentes habilidades de combate, que gracias a su
+                        mayor dominio del cosmos superan con creces las capacidades de los Bronze Saints.</p>
+
+                    <p class="categoria-texto">No parecen tener una función específica, ya que se les ve realizando
+                        diversas tareas, que van desde la formación de los futuros candidatos a Saint hasta la
+                        realización de misiones siguiendo las órdenes del Papa en otras partes del mundo.</p>
+
+                    <p class="categoria-texto">Siendo esta última la que algunos consideran la función principal de
+                        estos guerreros.</p>
+
+                    <div class="categoria-accion">
+                        <button type="button" class="btn-categoria btn-plata" data-categoria="plata"
+                            aria-label="Ver caballeros de Plata">
+                            <span>Ver Caballeros</span>
+                            <span class="text-arrow" aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Carrusel manual de personajes por categoría -->
+    <div class="carrusel-overlay" id="carrusel-overlay" role="dialog" aria-modal="true"
+        aria-labelledby="carrusel-titulo" aria-hidden="true">
+        <div class="carrusel-contenedor" role="document">
+            <div class="carrusel-encabezado">
+                <h2 class="carrusel-titulo" id="carrusel-titulo">Caballeros</h2>
+                <p class="carrusel-contador" id="carrusel-contador">0 / 0</p>
+            </div>
+
+            <div class="carrusel-escenario">
+                <button type="button" class="carrusel-flecha carrusel-flecha-izq" id="carrusel-prev"
+                    aria-label="Personaje anterior">&#10094;</button>
+
+                <figure class="carrusel-figura">
+                    <img class="carrusel-imagen" id="carrusel-imagen" src="" alt="">
+                    <figcaption class="carrusel-nombre" id="carrusel-nombre"></figcaption>
+                </figure>
+
+                <button type="button" class="carrusel-flecha carrusel-flecha-der" id="carrusel-next"
+                    aria-label="Personaje siguiente">&#10095;</button>
+            </div>
+
+            <div class="carrusel-pie">
+                <button type="button" class="btn-detener" id="carrusel-detener">Detener</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-sitio">
+        <p>Todos los derechos reservados &COPY; 2026</p>
+    </footer>
+
+    <script src="data/personajes.js"></script>
+    <script src="js/categorias.js"></script>
+
+</body>
+
+</html>
