@@ -231,9 +231,14 @@ header,
 }
 
 .seccion-athena p {
+    max-width: 70ch;
+    margin: 0 auto 1.4em;
     text-align: left;
-    margin-bottom: 15px;
     color: #d4af37; /* Aseguramos que el texto sea perfectamente legible */
+}
+
+.seccion-athena p:last-of-type {
+    margin-bottom: 0;
 }
 
 /* --- CONTENEDOR DE PERSONAJES DESTACADOS  --- */
@@ -824,7 +829,7 @@ header,
 
 .categoria-texto {
     max-width: 66ch;
-    margin: 0 auto 3em; /* 3em = dos líneas de interlineado */
+    margin: 0 auto 1.2em;
     color: #d4af37;
     text-align: left;
     font-size: 1.125rem;
@@ -1160,7 +1165,7 @@ body.carrusel-abierto {
 
     .categoria-texto {
         font-size: 1.0625rem;
-        margin-bottom: 2.6em;
+        margin-bottom: 1.2em;
     }
 
     .categoria-texto:last-of-type {
@@ -1217,11 +1222,6 @@ body.carrusel-abierto {
     outline: none;
     border-color: #d4af37;
     box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
-}
-
-#input-buscador::placeholder {
-    color: #718096;
-    letter-spacing: 2px;
 }
 
 .btn-buscar {

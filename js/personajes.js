@@ -225,6 +225,24 @@ document.addEventListener('DOMContentLoaded', () => {
         return limpio ? limpio + ' ' + unidad : '—';
     }
 
+    // La altura se guarda en centímetros y se muestra en metros: 175 → "1,75".
+    function convertirAltura(valor) {
+        const numero = Number(valor);
+        if (!Number.isFinite(numero) || numero < 10) {
+            return String(valor);
+        }
+        return (numero / 100).toFixed(2).replace('.', ',');
+    }
+
+    // Dohko tiene dos alturas registradas ("140-170"): se muestran como "1,40 a 1,70".
+    function formatearAltura(valor) {
+        const limpio = String(valor || '').trim();
+        if (!limpio) {
+            return '—';
+        }
+        return limpio.split('-').map((parte) => convertirAltura(parte.trim())).join(' a ');
+    }
+
     function valorOTexto(valor) {
         const limpio = String(valor || '').trim();
         return limpio || '—';
@@ -238,8 +256,8 @@ document.addEventListener('DOMContentLoaded', () => {
         modalImagen.classList.remove('sin-imagen');
         modalImagen.src = personaje.imagen;
         modalImagen.alt = personaje.nombre;
-        modalAltura.textContent = valorConUnidad(personaje.altura, 'cm');
-        modalPeso.textContent = valorConUnidad(personaje.peso, 'kg');
+        modalAltura.textContent = formatearAltura(personaje.altura);
+        modalPeso.textContent = valorConUnidad(personaje.peso, 'kgs');
         modalEdad.textContent = valorConUnidad(personaje.edad, 'años');
         modalProcedencia.textContent = valorOTexto(personaje.procedencia);
         modalArmadura.textContent = valorOTexto(personaje.armadura);

@@ -196,8 +196,8 @@ window.PERSONAJES = {
       "edad": "17",
       "procedencia": "Arabia Saudita",
       "armadura": "Armadura de Perseo",
-      "tecnica": "Rhas Al Ghûl Gorgona y Escudo de Medusa: invoca el poder de la gorgona y petrifica a quien mire su escudo.",
-      "descripcion": "Poseedor de un escudo capaz de petrificar a quien lo mire. Su mirada y su defensa lo convierten en un rival temido incluso entre los caballeros de Plata."
+      "tecnica": "Ras Al Ghul Gorgona y Escudo de Medusa: invoca el poder de la gorgona y petrifica a quien mire su escudo.",
+      "descripcion": "Guerrero frío y paciente, acostumbrado a observar antes de atacar. Quien se enfrenta a él debe cuidar cada gesto, porque un solo descuido puede ser definitivo."
     },
     {
       "id": 16,
