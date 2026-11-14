@@ -13,9 +13,9 @@ window.PERSONAJES = {
       "peso": "75",
       "edad": "20",
       "procedencia": "Tíbet",
-      "armadura": "Cloth de Aries",
-      "tecnica": "Muro de cristal",
-      "descripcion": "Reparador de armaduras y guardián de la primera casa del Zodíaco. Su calma y elegancia esconden a uno de los caballeros más sabios, experto en psicogénesis, teletransportación y defensas como el Muro de Cristal."
+      "armadura": "Armadura de Aries",
+      "tecnica": "Muro de cristal: levanta una barrera invisible con su cosmos, capaz de detener ataques físicos y energéticos.",
+      "descripcion": "Reparador de armaduras y guardián de la primera casa del Zodíaco. Su calma y elegancia esconden a uno de los caballeros más sabios, experto en psicogénesis y teletransportación."
     },
     {
       "id": 2,
@@ -26,8 +26,8 @@ window.PERSONAJES = {
       "peso": "130",
       "edad": "20",
       "procedencia": "Brasil",
-      "armadura": "Cloth de Taurus",
-      "tecnica": "Gran cuerno",
+      "armadura": "Armadura de Tauro",
+      "tecnica": "Gran cuerno: concentra todo su cosmos en los brazos y lo libera en un choque frontal de fuerza devastadora.",
       "descripcion": "El gigante noble de Tauro, orgulloso de su cuerpo robusto y de su fuerza gigantesca. Prefiere la lucha con el puño y las pocas palabras: su poder habla por él en cada combate."
     },
     {
@@ -39,9 +39,9 @@ window.PERSONAJES = {
       "peso": "87",
       "edad": "28",
       "procedencia": "Desconocido",
-      "armadura": "Cloth de Gemini",
-      "tecnica": "Explosión galáctica, tiene el poder suficiente para destruir al liberar su cosmos",
-      "descripcion": "El caballero más influyente de Géminis, dividido entre su lealtad a Atenea y una ambición oscura. Su enorme cosmos le permite desatar la Explosión Galáctica, un ataque capaz de arrasar con todo a su paso."
+      "armadura": "Armadura de Géminis",
+      "tecnica": "Explosión galáctica: reúne su cosmos y lo descarga como una onda expansiva con fuerza suficiente para arrasar cuanto encuentra.",
+      "descripcion": "El caballero más influyente de Géminis, dividido entre su lealtad a Athena y una ambición oscura. Su enorme cosmos le permite desatar ataques capaces de arrasar con todo a su paso."
     },
     {
       "id": 4,
@@ -52,8 +52,8 @@ window.PERSONAJES = {
       "peso": "82",
       "edad": "23",
       "procedencia": "Italia",
-      "armadura": "Cloth de Cáncer",
-      "tecnica": "Ondas infernales, manda el alma del enemigo al Inframundo",
+      "armadura": "Armadura de Cáncer",
+      "tecnica": "Ondas infernales: abre un portal al Inframundo y arrastra el alma del enemigo hacia él.",
       "descripcion": "Guerrero cruel que colecciona los rostros de sus víctimas y manipula el agujero que lleva al Inframundo. Su idea de la justicia cambia con el tiempo, lo que lo vuelve un rival impredecible."
     },
     {
@@ -65,8 +65,8 @@ window.PERSONAJES = {
       "peso": "85",
       "edad": "20",
       "procedencia": "Grecia",
-      "armadura": "Cloth de Leo",
-      "tecnica": "Rayo relampagueante",
+      "armadura": "Armadura de Leo",
+      "tecnica": "Rayo relampagueante: lanza una ráfaga de golpes a la velocidad de la luz con el puño cargado de cosmos.",
       "descripcion": "Caballero noble de gran honor y el más decidido de los dorados. No le gusta la estrategia: prefiere atacar con un golpe a la velocidad de la luz antes que perder tiempo planeando."
     },
     {
@@ -78,8 +78,8 @@ window.PERSONAJES = {
       "peso": "68",
       "edad": "20",
       "procedencia": "India",
-      "armadura": "Cloth de Virgo",
-      "tecnica": "El tesoro del cielo, técnica ofensiva defensiva,puede sellar hasta el sexto sentido",
+      "armadura": "Armadura de Virgo",
+      "tecnica": "El tesoro del cielo: técnica ofensiva y defensiva que puede sellar hasta el sexto sentido del oponente.",
       "descripcion": "El hombre más cercano a un dios y maestro de las ilusiones. Nada le hace perder la calma; su cosmos crece al cerrar los ojos y, al abrirlos, puede sellar los cinco sentidos de su oponente."
     },
     {
@@ -91,9 +91,9 @@ window.PERSONAJES = {
       "peso": "",
       "edad": "261",
       "procedencia": "China",
-      "armadura": "Cloth de Libra",
-      "tecnica": "Los cien dragones de Rozan",
-      "descripcion": "Maestro anciano y único sobreviviente de la guerra santa anterior. Las armas de su armadura pueden destruir estrellas, pero solo pueden usarse con el permiso de Atenea."
+      "armadura": "Armadura de Libra",
+      "tecnica": "Los cien dragones de Rozan: proyecta cien dragones de cosmos desde sus puños, capaces de pulverizar cualquier defensa.",
+      "descripcion": "Maestro anciano y único sobreviviente de la guerra santa anterior. Las armas de su armadura pueden destruir estrellas, pero solo pueden usarse con el permiso de Athena."
     },
     {
       "id": 8,
@@ -104,9 +104,9 @@ window.PERSONAJES = {
       "peso": "84",
       "edad": "20",
       "procedencia": "Grecia",
-      "armadura": "Cloth de Scorpio",
-      "tecnica": "El impacto rijo, es una aguja escarlata, señalando con la punta de la uña y realizando 15 punzadas, llega a para lizar los cinco sentidos de los contrincantes",
-      "descripcion": "Impulsivo y de fuerte sentido de la justicia, Milo castiga a sus rivales con las quince agujas escarlatas de Escorpio, capaces de paralizar los cinco sentidos."
+      "armadura": "Armadura de Escorpio",
+      "tecnica": "Aguja escarlata: señala con la punta de la uña y clava quince punzadas sucesivas que paralizan los cinco sentidos del rival.",
+      "descripcion": "Impulsivo y de fuerte sentido de la justicia, Milo castiga a sus rivales con golpes precisos que no dan tregua."
     },
     {
       "id": 9,
@@ -117,9 +117,9 @@ window.PERSONAJES = {
       "peso": "85",
       "edad": "14",
       "procedencia": "Grecia",
-      "armadura": "Cloth de Sagitario",
-      "tecnica": "Flecha de Oro de Sagitario",
-      "descripcion": "El caballero fiel a Atenea que la salvó siendo un bebé y aspirante a sumo sacerdote. Pese a su cuerpo de 14 años, aparenta ser mucho mayor y lucha con la Flecha de Oro de Sagitario."
+      "armadura": "Armadura de Sagitario",
+      "tecnica": "Flecha de Oro de Sagitario: dispara una flecha dorada cargada de cosmos, capaz de atravesar cualquier armadura.",
+      "descripcion": "El caballero fiel a Athena que la salvó siendo un bebé y aspirante a sumo sacerdote. Pese a su cuerpo de 14 años, aparenta ser mucho mayor."
     },
     {
       "id": 10,
@@ -130,9 +130,9 @@ window.PERSONAJES = {
       "peso": "83",
       "edad": "23",
       "procedencia": "España",
-      "armadura": "Cloth de Capricorn",
-      "tecnica": "Excalibur, sus piernasy brazos se convierten en una afilada espada sagrada",
-      "descripcion": "Experto en artes marciales, Shura convierte sus brazos y piernas en una espada sagrada con Excalibur. Su técnica afilada lo vuelve uno de los guerreros más peligrosos del Santuario."
+      "armadura": "Armadura de Capricornio",
+      "tecnica": "Excalibur: convierte sus brazos y piernas en una espada sagrada de filo capaz de cortar cualquier cosa.",
+      "descripcion": "Experto en artes marciales, Shura es uno de los guerreros más peligrosos del Santuario. Su técnica afilada le permite cortar cualquier defensa."
     },
     {
       "id": 11,
@@ -143,8 +143,8 @@ window.PERSONAJES = {
       "peso": "76",
       "edad": "20",
       "procedencia": "Francia",
-      "armadura": "Cloth de Aquarius",
-      "tecnica": "Ejecución de la aurora",
+      "armadura": "Armadura de Acuario",
+      "tecnica": "Ejecución de la aurora: congela el aire y encierra al enemigo en un ataúd de hielo cercano al cero absoluto.",
       "descripcion": "El maestro del hielo y el frío. Detrás de su apariencia distante se esconde un corazón valiente: como guerrero, Camus lucha siempre según sus principios."
     },
     {
@@ -156,9 +156,9 @@ window.PERSONAJES = {
       "peso": "72",
       "edad": "22",
       "procedencia": "Suecia",
-      "armadura": "Cloth de Pisces",
-      "tecnica": "Rosas diabólicas reales ataca con el veneno de las rosas rojas",
-      "descripcion": "Une la belleza letal con las rosas mortales. Elegante y peligrosa a la vez, es la guerrera de belleza brillante entre el cielo y la tierra, y su convicción es el poder de la justicia y la paz."
+      "armadura": "Armadura de Piscis",
+      "tecnica": "Rosas diabólicas reales: ataca con rosas rojas impregnadas de un veneno mortal.",
+      "descripcion": "Une la belleza letal con las rosas mortales. Elegante y peligroso a la vez, es el guerrero de belleza brillante entre el cielo y la tierra, y su convicción es el poder de la justicia y la paz."
     },
     {
       "id": 13,
@@ -169,9 +169,9 @@ window.PERSONAJES = {
       "peso": "51",
       "edad": "16",
       "procedencia": "Japón",
-      "armadura": "Cloth de Eagle",
-      "tecnica": "Destello del Águila(pron: I-Guru Tou), Golpe de Meteoro ( pron: Ryu Sei Ken), Puño del Vacío (Kuu Ken)",
-      "descripcion": "Valiente y justiciera, Marin defiende a los débiles sin revelar su verdadero rostro. Combina el Destello del Águila con el Golpe de Meteoro y el Puño del Vacío."
+      "armadura": "Armadura de Águila",
+      "tecnica": "Destello del Águila: concentra su cosmos y lanza una onda de choque a la velocidad del sonido.",
+      "descripcion": "Valiente y justiciera, Marin defiende a los débiles sin revelar su verdadero rostro. Entrena a Seiya y lo empuja a superar sus propios límites."
     },
     {
       "id": 14,
@@ -182,9 +182,9 @@ window.PERSONAJES = {
       "peso": "80",
       "edad": "17",
       "procedencia": "Irak",
-      "armadura": "Cloth de Centaurus",
-      "tecnica": "Fotia Roufihtra",
-      "descripcion": "Caballero que controla el fuego y cumple sus misiones con responsabilidad, siempre pendiente del bienestar de sus compañeros. Se enfrentó a Hyoga de Cisne con su Fotia Roufihtra."
+      "armadura": "Armadura de Centauro",
+      "tecnica": "Fotia Roufihtra: lanza llamaradas de fuego con forma de centauro que envuelven al enemigo.",
+      "descripcion": "Caballero que controla el fuego y cumple sus misiones con responsabilidad, siempre pendiente del bienestar de sus compañeros. Se enfrentó a Hyoga de Cisne."
     },
     {
       "id": 15,
@@ -195,9 +195,9 @@ window.PERSONAJES = {
       "peso": "83",
       "edad": "17",
       "procedencia": "Arabia Saudita",
-      "armadura": "Cloth de Perseus",
-      "tecnica": "Rhas Al Ghûl Gorgona, Escudo de Medusa",
-      "descripcion": "Poseedor del temible Escudo de Medusa, capaz de petrificar a quien lo mire. Su mirada y su escudo lo convierten en un rival temido incluso entre los caballeros de Plata."
+      "armadura": "Armadura de Perseo",
+      "tecnica": "Rhas Al Ghûl Gorgona y Escudo de Medusa: invoca el poder de la gorgona y petrifica a quien mire su escudo.",
+      "descripcion": "Poseedor de un escudo capaz de petrificar a quien lo mire. Su mirada y su defensa lo convierten en un rival temido incluso entre los caballeros de Plata."
     },
     {
       "id": 16,
@@ -208,9 +208,9 @@ window.PERSONAJES = {
       "peso": "86",
       "edad": "17",
       "procedencia": "Alemania Oriental",
-      "armadura": "Cloth de Canis Maior",
-      "tecnica": "Gran Destructor de Montañas (Great Mountain Smasher)",
-      "descripcion": "Caballero de Plata de Can Mayor, de físico atlético y aspecto maduro pese a sus 17 años. Su Gran Destructor de Montañas concentra una fuerza brutal en un solo golpe."
+      "armadura": "Armadura de Can Mayor",
+      "tecnica": "Gran Destructor de Montañas: concentra una fuerza brutal en un solo golpe, capaz de partir montañas.",
+      "descripcion": "Caballero de Plata de Can Mayor, de físico atlético y aspecto maduro pese a sus 17 años. Su fuerza descomunal lo vuelve un rival temible en el combate cuerpo a cuerpo."
     },
     {
       "id": 18,
@@ -221,9 +221,9 @@ window.PERSONAJES = {
       "peso": "60",
       "edad": "19",
       "procedencia": "Grecia",
-      "armadura": "Cloth de Lyra",
-      "tecnica": "Death Trip Serenade, Stringer Fine,  Stringer Nocturne,  Stringer Requiem",
-      "descripcion": "Considerado el caballero de Plata más poderoso, con un cosmos que rivaliza con el de los dorados. Su cabello rubio, su armadura violácea y su lira dorada completan la imagen de un guerrero elegante."
+      "armadura": "Armadura de Lira",
+      "tecnica": "Death Trip Serenade: interpreta una melodía con su lira que ataca directamente el alma y el cuerpo del enemigo, sin que su defensa pueda detenerla.",
+      "descripcion": "Considerado el caballero de Plata más poderoso, con un cosmos que rivaliza con el de los dorados. Músico prodigioso, su lira puede herir o sanar, y su historia está marcada por el amor y la pérdida."
     },
     {
       "id": 17,
@@ -234,9 +234,9 @@ window.PERSONAJES = {
       "peso": "68",
       "edad": "16",
       "procedencia": "Francia",
-      "armadura": "Cloth de Lizard",
-      "tecnica": "Mavrou Trypa, canaliza su cosmos para manipular el aire que lo rodea, concentrándolo en su brazo derecho. Luego extiende el brazo y, con la mano abierta y los dedos apuntando hacia su objetivo, libera una poderosa ráfaga de viento. Esta se proyecta en forma de tornado, arrastrando al oponente a su interior y ejerciendo una presión abrumadora con la intención de pulverizarlo",
-      "descripcion": "De rasgos femeninos y modales refinados, es uno de los caballeros de Plata más fuertes. Su Mavrou Trypa desata un tornado de viento capaz de pulverizar a su oponente."
+      "armadura": "Armadura de Lagarto",
+      "tecnica": "Mavrou Trypa: canaliza su cosmos en el brazo y libera un tornado de viento que arrastra y pulveriza al oponente.",
+      "descripcion": "De rasgos femeninos y modales refinados, es uno de los caballeros de Plata más fuertes. Controla el aire a su alrededor y lo convierte en un arma."
     },
     {
       "id": 20,
@@ -247,9 +247,9 @@ window.PERSONAJES = {
       "peso": "53",
       "edad": "13",
       "procedencia": "Japón",
-      "armadura": "Cloth de Pegasus",
-      "tecnica": "Meteoro de Pegaso",
-      "descripcion": "Impulsivo, valiente y dueño de un cosmos inquebrantable. Seiya persigue su objetivo sin rendirse y responde siempre con el Meteoro de Pegaso."
+      "armadura": "Armadura de Pegaso",
+      "tecnica": "Meteoro de Pegaso: lanza una lluvia de golpes a la velocidad de la luz con los puños cargados de cosmos.",
+      "descripcion": "Impulsivo, valiente y dueño de un cosmos inquebrantable. Seiya persigue su objetivo sin rendirse, incluso cuando la batalla parece perdida."
     },
     {
       "id": 21,
@@ -260,8 +260,8 @@ window.PERSONAJES = {
       "peso": "53",
       "edad": "14",
       "procedencia": "Japón",
-      "armadura": "Cloth de Dragón",
-      "tecnica": "Cólera del Dragón",
+      "armadura": "Armadura de Dragón",
+      "tecnica": "Cólera del Dragón: eleva su cosmos y proyecta el poder del dragón desde su puño, con fuerza para romper montañas.",
       "descripcion": "Apacible y sereno, Shiryu esconde tras su calma una voluntad de hierro. El dragón de su espalda aparece cuando su cosmos se eleva al máximo, aunque deja al descubierto el punto débil de su corazón."
     },
     {
@@ -273,9 +273,9 @@ window.PERSONAJES = {
       "peso": "60",
       "edad": "14",
       "procedencia": "Rusia",
-      "armadura": "Cloth del Cygnus",
-      "tecnica": "Diamond Dust, Aurora Thunder Attack, Aurora Execution",
-      "descripcion": "Bajo su apariencia orgullosa y fría late un aliado confiable y compasivo. De ascendencia rusa por su madre, domina el hielo con el Diamond Dust y la Ejecución de la Aurora."
+      "armadura": "Armadura de Cisne",
+      "tecnica": "Diamond Dust, Aurora Thunder Attack y Aurora Execution: ataques de hielo que congelan al enemigo, desde ráfagas de cristales hasta un ataúd glacial.",
+      "descripcion": "Bajo su apariencia orgullosa y fría late un aliado confiable y compasivo. De ascendencia rusa por su madre, domina el hielo con una precisión letal."
     },
     {
       "id": 19,
@@ -286,9 +286,9 @@ window.PERSONAJES = {
       "peso": "62",
       "edad": "15",
       "procedencia": "Japón",
-      "armadura": "Cloth de Phoenix",
-      "tecnica": "Barrera de Cosmos y Golpe de Cosmos",
-      "descripcion": "De apariencia ruda y seria, Ikki es el más solitario de los caballeros de Bronce. Su cosmos renace como el fénix y castiga a sus enemigos con la Barrera y el Golpe de Cosmos."
+      "armadura": "Armadura de Fénix",
+      "tecnica": "Barrera de Cosmos y Golpe de Cosmos: erige una defensa de energía y descarga después un puñetazo con todo su poder.",
+      "descripcion": "De apariencia ruda y seria, Ikki es el más solitario de los caballeros de Bronce. Su cosmos renace como el fénix y lo vuelve casi imposible de derrotar."
     },
     {
       "id": 22,
@@ -299,9 +299,9 @@ window.PERSONAJES = {
       "peso": "55",
       "edad": "13",
       "procedencia": "Japón",
-      "armadura": "Cloth de Unicornio",
-      "tecnica": "Unicornio Gallop,consiste en asestar una o varias patadas encadenadas desde el aire a la velocidad del sonido.",
-      "descripcion": "Jabu, caballero de Unicornio, es un joven de piel morena clara y cabello oscuro. Su Unicornio Gallop encadena patadas desde el aire a la velocidad del sonido."
+      "armadura": "Armadura de Unicornio",
+      "tecnica": "Unicornio Gallop: encadena una o varias patadas desde el aire a la velocidad del sonido.",
+      "descripcion": "Jabu, caballero de Unicornio, es un joven de piel morena clara y cabello oscuro. Sus patadas encadenadas lo convierten en un rival veloz y persistente."
     },
     {
       "id": 23,
@@ -312,9 +312,9 @@ window.PERSONAJES = {
       "peso": "57",
       "edad": "14",
       "procedencia": "Japón",
-      "armadura": "Cloth del Lobo",
-      "tecnica": "Dead Howling,concentra sus cosmos en sus puños o brazos, para distorsionar el aire a su alrededor y proyecta en contra de su enemigo una gran cantidad de laminas de aire cortantes a la velocidad del sonido",
-      "descripcion": "Nachi, caballero de Lobo, es un joven de piel morena y cabello alborotado. Su Dead Howling lanza láminas de aire cortantes a la velocidad del sonido."
+      "armadura": "Armadura de Lobo",
+      "tecnica": "Dead Howling: concentra su cosmos en los puños y lanza láminas de aire cortantes a la velocidad del sonido.",
+      "descripcion": "Nachi, caballero de Lobo, es un joven de piel morena y cabello alborotado. Su carácter impulsivo lo lleva a atacar sin dudar."
     }
   ]
 };

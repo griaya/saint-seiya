@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explorá las categorías de Saint Seiya (Los Caballeros del Zodíaco): caballeros de Bronce, Plata y Oro, con imágenes y datos. Proyecto educativo.">
     <title>Categorías</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="shortcut icon" href="img/logos/logo_nav.webp">
@@ -13,7 +14,7 @@
     <header>
         <nav>
             <a href="index.html" class="logo-nav">
-                <img src="img/logos/logo_nav.webp" alt="Logo Los Caballeros del Zodiaco">
+                <img src="img/logos/logo_nav.webp" alt="Logo Los Caballeros del Zodíaco">
             </a>
             <a href="index.html">Inicio</a>
             <a href="categorias.html">Categorías</a>
@@ -24,7 +25,7 @@
 
     <main class="categorias-main">
 
-        <h1 class="categorias-titulo">Elegí tu Categoría Favorita</h1>
+        <h1 class="categorias-titulo">Elegí tu categoría favorita</h1>
 
         <div class="categorias-tabs">
             <div class="selector-categorias" role="tablist" aria-label="Categorías de caballeros">
@@ -49,15 +50,14 @@
                     hidden>
                     <h2 class="categoria-titulo">Bronce</h2>
 
-                    <p class="categoria-texto">Los Bronze Saints también llamados Caballeros de Bronce son los
+                    <p class="categoria-texto">Los Bronze Saints, también llamados Caballeros de Bronce, son los
                         guerreros que forman parte de la categoría más baja del ejército de Athena.</p>
 
-                    <p class="categoria-texto">Sin embargo, siguen siendo poderosos guerreros poseen grandes
-                        habilidades de combate que superan con creces las de un humano normal bien entrenado, pues
-                        gracias a que pueden explotar su cosmos interior han adquirido habilidades sobrehumanas que les
-                        permiten alcanzar una velocidad de mach 1 (340,29 m/s), rasgar el cielo con sus puños y destruir
-                        la tierra con sus patadas que cuentan con habilidades sobrehumanas y son una parte fundamental
-                        del ejército de Athena.</p>
+                    <p class="categoria-texto">Sin embargo, siguen siendo poderosos guerreros: poseen grandes
+                        habilidades de combate que superan con creces las de un humano normal bien entrenado. Gracias a
+                        que pueden explotar su cosmos interior, han adquirido capacidades sobrehumanas que les permiten
+                        alcanzar una velocidad de mach 1 (340,29 m/s), rasgar el cielo con sus puños y destruir la Tierra
+                        con sus patadas. Son una parte fundamental del ejército de Athena.</p>
 
                     <div class="categoria-accion">
                         <button type="button" class="btn-categoria btn-bronce" data-categoria="bronce"
@@ -71,16 +71,16 @@
                 <section class="categoria-bloque oro" id="panel-oro" role="tabpanel" aria-labelledby="tab-oro" hidden>
                     <h2 class="categoria-titulo">Oro</h2>
 
-                    <p class="categoria-texto">Los Gold Saints también llamados Caballeros Dorados o Caballeros de Oro
+                    <p class="categoria-texto">Los Gold Saints, también llamados Caballeros Dorados o Caballeros de Oro,
                         son los guerreros de élite del ejército de Athena, que ostentan con orgullo un rango superior al
                         de los Silver y Bronze Saints.</p>
 
-                    <p class="categoria-texto">Son los Saints de más alto rango en el Santuario, los más poderosos y
-                        los que ostentan la mayor jerarquía dentro del ejército de la diosa Athena.</p>
+                    <p class="categoria-texto">Son los caballeros de más alto rango en el Santuario: los más poderosos y
+                        los que gozan de la mayor jerarquía dentro del ejército de la diosa Athena.</p>
 
                     <p class="categoria-texto">La función principal de los doce es proteger los Templos a lo largo del
                         camino que recorre la montaña del Santuario, para evitar que los enemigos e invasores lleguen a
-                        la cima de la montaña donde la diosa Athena habita su Templo.</p>
+                        la cima de la montaña donde la diosa Athena tiene su Templo.</p>
 
                     <div class="categoria-accion">
                         <button type="button" class="btn-categoria btn-oro" data-categoria="oro"
@@ -95,19 +95,19 @@
                     hidden>
                     <h2 class="categoria-titulo">Plata</h2>
 
-                    <p class="categoria-texto">Los Silver Saints también llamados Caballeros Plateados o Caballeros de
-                        Plata son los guerreros que forman parte de la categoría intermedia del ejército de Athena, que
+                    <p class="categoria-texto">Los Silver Saints, también llamados Caballeros Plateados o Caballeros de
+                        Plata, son los guerreros que forman parte de la categoría intermedia del ejército de Athena y
                         ostentan con orgullo un rango superior al de los Bronze Saints, pero inferior al de los Gold
                         Saints.</p>
 
-                    <p class="categoria-texto">Están dotados de excelentes habilidades de combate, que gracias a su
-                        mayor dominio del cosmos superan con creces las capacidades de los Bronze Saints.</p>
+                    <p class="categoria-texto">Están dotados de excelentes habilidades de combate que, gracias a su
+                        mayor dominio del cosmos, superan con creces las capacidades de los Bronze Saints.</p>
 
                     <p class="categoria-texto">No parecen tener una función específica, ya que se les ve realizando
-                        diversas tareas, que van desde la formación de los futuros candidatos a Saint hasta la
-                        realización de misiones siguiendo las órdenes del Papa en otras partes del mundo.</p>
+                        diversas tareas que van desde la formación de los futuros candidatos a Caballero hasta la
+                        realización de misiones siguiendo las órdenes del sumo sacerdote en otras partes del mundo.</p>
 
-                    <p class="categoria-texto">Siendo esta última la que algunos consideran la función principal de
+                    <p class="categoria-texto">Esta última es considerada por algunos como la función principal de
                         estos guerreros.</p>
 
                     <div class="categoria-accion">
@@ -151,12 +151,22 @@
         </div>
     </div>
 
+    <!-- Botón flotante para volver arriba -->
+    <button type="button" class="volver-arriba" id="volver-arriba" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="volver-arriba-texto">Volver arriba</span>
+    </button>
+
     <footer class="footer-sitio">
         <p>Todos los derechos reservados &COPY; 2026</p>
     </footer>
 
     <script src="data/personajes.js"></script>
     <script src="js/categorias.js"></script>
+    <script src="js/volver-arriba.js"></script>
 
 </body>
 

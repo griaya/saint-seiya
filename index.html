@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitio educativo sin fines de lucro sobre Saint Seiya (Los Caballeros del Zodíaco): caballeros de Bronce, Plata y Oro, con fichas y características.">
     <title>El Mundo de los Caballeros</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="shortcut icon" href="img/logos/logo_nav.webp">
@@ -23,7 +24,7 @@
    <header>
     <nav>
         <a href="index.html" class="logo-nav">
-            <img src="img/logos/logo_nav.webp" alt="Logo Los Caballeros del Zodiaco"> </a>
+            <img src="img/logos/logo_nav.webp" alt="Logo Los Caballeros del Zodíaco"> </a>
         <a href="index.html">Inicio</a>
         <a href="categorias.html">Categorías</a>
         <a href="personajes.html">Personajes</a>
@@ -31,19 +32,19 @@
     </nav>
 </header>
     <main>
-        <h1>Investiga el mundo de los Caballeros</h1>
+        <h1>Investigá el mundo de los Caballeros</h1>
 
         <section class="seccion-athena">
             <!-- Imagen central de Athena añadida -->
             <div class="athena-container">
-                <img src="img/principal/athena.webp" alt="Saori Kido - Athena">
+                <img src="img/principal/athena.webp" alt="Saori Kido (Athena)">
             </div>
 
             <p>Es la diosa griega de la sabiduría y la estrategia militar. Actúa como la protectora suprema de la Tierra reencarnando
-             cada 243 años como mortal —representada en la era moderna por Saori Kido— para liderar la defensa del planeta frente a 
+             cada 243 años como mortal (representada en la era moderna por Saori Kido) para liderar la defensa del planeta frente a 
              amenazas divinas como Hades o Poseidón. <br> Ante ella, los Caballeros conforman su ejército sagrado de máxima lealtad, 
              juramentados a protegerla con sus vidas y portar las armaduras de las constelaciones para servir como su escudo y espada 
-             en batallas</p>
+             en batallas.</p>
         </section>
 
     <h2 class="titulo-personajes">Personajes destacados</h2>
@@ -81,12 +82,22 @@
             </div>
         </div>
     </div>
+    <!-- Botón flotante para volver arriba -->
+    <button type="button" class="volver-arriba" id="volver-arriba" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="volver-arriba-texto">Volver arriba</span>
+    </button>
+
 <footer class="footer-sitio">
         <p>Todos los derechos reservados &COPY; 2026</p>
 </footer>
 
 <script src="js/intro.js"></script>
 <script src="js/identidad-modal.js"></script>
+<script src="js/volver-arriba.js"></script>
 
 </body>
 

@@ -276,26 +276,4 @@ document.addEventListener('DOMContentLoaded', () => {
             cerrarModal();
         }
     });
-
-    // --- Botón "Volver arriba" ---
-    const btnArriba = document.getElementById('volver-arriba');
-
-    if (btnArriba) {
-        const UMBRAL_FINAL = 320; // px desde el final donde aparece el botón
-
-        function actualizarBotonArriba() {
-            const cercaDelFinal =
-                window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - UMBRAL_FINAL;
-            btnArriba.classList.toggle('visible', cercaDelFinal);
-        }
-
-        window.addEventListener('scroll', actualizarBotonArriba, { passive: true });
-        window.addEventListener('resize', actualizarBotonArriba);
-        actualizarBotonArriba();
-
-        btnArriba.addEventListener('click', () => {
-            const reducir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            window.scrollTo({ top: 0, behavior: reducir ? 'auto' : 'smooth' });
-        });
-    }
 });

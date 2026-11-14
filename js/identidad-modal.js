@@ -15,21 +15,21 @@ document.addEventListener('DOMContentLoaded', () => {
             "nombre": "Seiya de Pegaso",
             "constelacion": "Pegaso",
             "origen": "Japón",
-            "categoria": "Santo de Bronce",
+            "categoria": "Caballero de Bronce",
             "caracteristicas": "Valiente, impulsivo, perseverante y con un cosmos capaz de superar a los dioses."
         },
         "ikki": {
             "nombre": "Ikki de Fénix",
             "constelacion": "Fénix",
             "origen": "Japón",
-            "categoria": "Santo de Bronce",
+            "categoria": "Caballero de Bronce",
             "caracteristicas": "Solitario, implacable en combate, protector desde las sombras y el único capaz de resucitar de sus cenizas."
         },
         "shaka": {
             "nombre": "Shaka de Virgo",
             "constelacion": "Virgo",
             "origen": "India",
-            "categoria": "Santo de Oro",
+            "categoria": "Caballero de Oro",
             "caracteristicas": "Considerado el hombre más cercano a un dios, de sabiduría infinita y un poder mental devastador."
         }
     };
