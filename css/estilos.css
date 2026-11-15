@@ -1707,3 +1707,20 @@ body.modal-abierto {
         transition: none;
     }
 }
+
+/* En pantallas grandes, el texto de Athena se lee como una columna alineada con la imagen */
+@media (min-width: 769px) {
+    .seccion-athena p {
+        max-width: 78%; /* mismo ancho que la imagen de Athena */
+        font-size: 1.25rem;
+    }
+
+    .seccion-athena p:first-of-type {
+        margin-top: 2em;
+    }
+
+    /* El círculo del nombre sobresale 43px de la tarjeta: este aire evita que toque el título */
+    .contenedor-personajes {
+        margin-top: 72px;
+    }
+}
